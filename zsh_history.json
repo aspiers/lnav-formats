@@ -1,0 +1,20 @@
+{
+    "zsh_history" : {
+        "title" : "Zsh History",
+        "description" : "The .zshhistory file format.",
+        "url" : "http://zsh.org/",
+        "regex" : {
+            "std" : {
+                "pattern" : "^: (?<timestamp>\\d+):(?<elapsed>\\d+);(?<body>.*)?$"
+            }
+        },
+        "timestamp-format" : [
+            "%s"
+        ],
+        "sample" : [
+            {
+                "line" : ": 1479567661:0;echo HELLO=BAR"
+            }
+        ]
+    }
+}
