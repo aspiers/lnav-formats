@@ -1,0 +1,20 @@
+{
+    "bash_history" : {
+        "title" : "Bash History",
+        "description" : "The .bash_history file format.",
+        "url" : "https://www.gnu.org/software/bash/bash.html",
+        "regex" : {
+            "std" : {
+                "pattern" : "^#(?<timestamp>\\d+)\\n?(?<body>.*)?$"
+            }
+        },
+        "timestamp-format" : [
+            "%s"
+        ],
+        "sample" : [
+            {
+                "line" : "#1375138067\necho HELLO=BAR"
+            }
+        ]
+    }
+}
