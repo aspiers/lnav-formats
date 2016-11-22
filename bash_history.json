@@ -6,14 +6,27 @@
         "regex" : {
             "std" : {
                 "pattern" : "^#(?<timestamp>\\d+)\\n?(?<body>.*)?$"
+            },
+            "from_history" : {
+                "pattern" : "^\\s*(?<linenum>\\d+)\\s*(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}) (?<body>.*)?$"
             }
         },
+        "timestamp-field" : "timestamp",
         "timestamp-format" : [
+            "%Y-%m-%d %H:%M:%S",
             "%s"
         ],
+        "value" : {
+            "linenum" : {
+                "kind" : "integer"
+            }
+        },
         "sample" : [
             {
                 "line" : "#1375138067\necho HELLO=BAR"
+            },
+            {
+                "line" : "   39  2016-11-16 15:06:58 echo HELLO=BAR"
             }
         ]
     }
