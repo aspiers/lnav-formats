@@ -1,0 +1,21 @@
+{
+    "oslo_log" : {
+        "title" : "OpenStack oslo.log formats",
+        "description" : "Log formats used by OpenStack via oslo.log",
+        "url" : "http://docs.openstack.org/developer/oslo.log/",
+        "regex" : {
+            "std" : {
+                "pattern" : "^(?<timestamp>\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}[+-]\\d{2}:\\d{2}) +(?<component>\\w[\\w-]+): (?<body>\\S.*)$"
+            }
+        },
+        "value" : {
+            "body" : { "kind" : "string" },
+            "component" : { "kind" : "string" }
+        },
+        "sample" : [
+            {
+                "line" : "2016-10-27T04:11:08+00:00  neutron-server: (13351) accepted ('10.76.4.136', 50971)"
+            }
+        ]
+    }
+}
