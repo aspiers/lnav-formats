@@ -1,0 +1,42 @@
+{
+    "alogcat" : {
+        "title" : "Android logcat format",
+        "description" : "Log format used by Android's logcat tool",
+        "url" : "https://developer.android.com/studio/command-line/logcat",
+        "regex" : {
+            "std" : {
+                "pattern" : "^(?<timestamp>\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}\\.\\d{3}) +(?<pid>\\d+) +(?<tid>\\d+) +(?<priority>[VDIWEF]) +(?<tag>\\w.+?) *: (?<body>\\S.*)$"
+            }
+        },
+        "timestamp-field" : "timestamp",
+        "timestamp-format" : [
+            "%m-%d %H:%M:%S.%L"
+        ],
+        "level-field" : "priority",
+        "level" : {
+            "fatal" : "F",
+            "error" : "E",
+            "warning" : "W",
+            "info" : "I",
+            "debug" : "D",
+            "debug2" : "V"
+        },
+        "value" : {
+            "pid" : { "kind" : "integer" },
+            "tid" : { "kind" : "integer" },
+            "priority" : { "kind" : "string" },
+            "tag" : { "kind" : "string", "identifier" : true },
+            "body" : { "kind" : "string" }
+        },
+        "sample" : [
+            {
+                "line" : "01-24 13:26:54.468   662   686 E FirewallController: FirewallController::setUidRule chain = 2, uid = 10334, rule = 0, firewallType = 1, mUseBpfOwnerMatch = 0",
+                "level" : "error"
+            },
+            {
+                "line" : "01-24 13:30:07.684 11194 11194 I Perf    : Connecting to perf service.",
+                "level" : "info"
+            }
+        ]
+    }
+}
