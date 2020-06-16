@@ -1,0 +1,25 @@
+{
+    "alogcat" : {
+        "title" : "dts",
+        "description" : "Log format used by Adam's dts utility",
+        "url" : "https://github.com/aspiers/shell-env/blob/master/bin/dts",
+        "regex" : {
+            "std" : {
+                "pattern" : "^(?<timestamp>\\d{4}/\\d{2}/\\d{2} \\w{3} \\d{2}:\\d{2}:\\d{2}) +(?<body>.*)$"
+            }
+        },
+        "timestamp-field" : "timestamp",
+        "timestamp-format" : [
+            "%Y/%m/%d %a %H:%M:%S"
+        ],
+        "value" : {
+            "body" : { "kind" : "string" }
+        },
+        "sample" : [
+            {
+                "line" : "2020/06/16 Tue 13:30:07 test message",
+                "level": "info"
+            }
+        ]
+    }
+}
